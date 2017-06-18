@@ -18,7 +18,7 @@ public interface TbItemDao {
 
     List<TbItem> selectByExample(TbItemQuery example);
 
-    TbItem selectByPrimaryKey(Long id);
+	TbItem selectByPrimaryKey(Long id);
 
     int updateByExampleSelective(@Param("record") TbItem record, @Param("example") TbItemQuery example);
 
