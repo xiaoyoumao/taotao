@@ -48,7 +48,7 @@
 		<!-- ***************************** -->
 
 		<!-- JSP相关 -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
@@ -61,7 +61,7 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jsp-api</artifactId>
 			<scope>provided</scope>
-		</dependency>
+		</dependency> -->
 		<!-- ***************************** --> 
 		
 	</dependencies>
