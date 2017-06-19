@@ -37,8 +37,7 @@
 
 	<!-- 事务配置 -->
 	<!-- <context:annotation-config /> -->
-	<!-- 开启事务注解驱动 -->
-	<!-- <tx:annotation-driven /> -->
+	
 	<!-- 使用Spring @TransActional注解管理事物 -->
 	<!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->
 </beans>
