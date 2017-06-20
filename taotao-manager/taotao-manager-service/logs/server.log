@@ -46,3 +46,67 @@ Loading properties file from class path resource [properties/db.properties]
 
 [INFO ] 2017-06-20 10:56:29,624 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
 {dataSource-1} inited
+
+
+[INFO ] 2017-06-20 13:11:55,357 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:578)
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1be514e4: startup date [Tue Jun 20 13:11:55 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-06-20 13:11:55,396 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+Loading XML bean definitions from class path resource [spring/applicationContext-dao.xml]
+
+
+[INFO ] 2017-06-20 13:11:55,835 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+Loading properties file from class path resource [properties/db.properties]
+
+
+[INFO ] 2017-06-20 13:11:57,042 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
+{dataSource-1} inited
+
+
+[INFO ] 2017-06-20 13:12:02,921 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:578)
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1be514e4: startup date [Tue Jun 20 13:12:02 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-06-20 13:12:02,955 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+Loading XML bean definitions from class path resource [spring/applicationContext-dao.xml]
+
+
+[INFO ] 2017-06-20 13:12:03,254 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+Loading properties file from class path resource [properties/db.properties]
+
+
+[INFO ] 2017-06-20 13:12:04,148 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
+{dataSource-1} inited
+
+
+[INFO ] 2017-06-20 13:19:32,924 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:578)
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1be514e4: startup date [Tue Jun 20 13:19:32 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-06-20 13:19:32,966 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+Loading XML bean definitions from class path resource [spring/applicationContext-dao.xml]
+
+
+[INFO ] 2017-06-20 13:19:33,397 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+Loading properties file from class path resource [properties/db.properties]
+
+
+[INFO ] 2017-06-20 13:19:34,569 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
+{dataSource-1} inited
+
+
+[INFO ] 2017-06-20 13:26:48,460 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:578)
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@33c063ff: startup date [Tue Jun 20 13:26:48 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-06-20 13:26:48,493 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+Loading XML bean definitions from class path resource [spring/applicationContext-dao.xml]
+
+
+[INFO ] 2017-06-20 13:26:48,791 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+Loading properties file from class path resource [properties/db.properties]
+
+
+[INFO ] 2017-06-20 13:26:49,692 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
+{dataSource-1} inited
