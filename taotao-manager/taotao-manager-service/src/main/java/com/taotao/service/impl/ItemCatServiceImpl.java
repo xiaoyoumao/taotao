@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.taotao.common.pojo.EasyUITreeNode;
 import com.taotao.dao.TbItemCatDao;
-import com.taotao.pojo.EasyUITreeNode;
 import com.taotao.pojo.TbItemCat;
 import com.taotao.pojo.TbItemCatQuery;
 import com.taotao.pojo.TbItemCatQuery.Criteria;

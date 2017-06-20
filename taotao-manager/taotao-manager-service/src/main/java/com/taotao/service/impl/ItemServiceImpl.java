@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.taotao.common.pojo.EasyUIDataGridResult;
 import com.taotao.dao.TbItemDao;
-import com.taotao.pojo.EasyUIDataGridResult;
 import com.taotao.pojo.TbItem;
 import com.taotao.pojo.TbItemQuery;
 import com.taotao.service.ItemService;
