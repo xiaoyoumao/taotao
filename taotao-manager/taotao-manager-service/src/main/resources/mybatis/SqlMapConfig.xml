@@ -4,12 +4,14 @@
 		"http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+
 	<!-- 配置PageHelper分页插件 -->
 	<plugins>
-		<!-- 加载maybatis分页拦截器PageHelper -->
-		<plugin interceptor="com.github.pagehelper.PageHelper">
+		<plugin interceptor="com.github.pagehelper.PageInterceptor">
 			<!-- 配置所使用的数据库方言 -->
-			<property name="dialect" value="mysql" />
+			<property name="helperDialect" value="mysql" />
 		</plugin>
 	</plugins>
+
+
 </configuration>
