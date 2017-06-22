@@ -12,12 +12,11 @@ import com.taotao.common.pojo.EasyUITreeNode;
 import com.taotao.service.ItemCatService;
 
 @Controller
-@RequestMapping("/item/cat")
 public class ItemCatController {
 	@Autowired
 	private ItemCatService itemCatService;
 
-	@RequestMapping("/list")
+	@RequestMapping("/item/cat/list")
 	@ResponseBody
 	public List<EasyUITreeNode> getItemCatList(@RequestParam(name = "id", defaultValue = "0") Long parentId) {
 		List<EasyUITreeNode> list = itemCatService.getItemCatList(parentId);

@@ -32,6 +32,7 @@ public class PictureController {
 
 			// 获取扩展名
 			String fileName = uploadFile.getOriginalFilename();
+			System.out.println("fileName:" + fileName);
 			String extName = fileName.substring(fileName.lastIndexOf(".") + 1);
 			// 上传到图片服务器
 			FastDFSClient fastDFSClient = new FastDFSClient("classpath:resources/client.conf");
