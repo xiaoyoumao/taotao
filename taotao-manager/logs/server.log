@@ -8054,6 +8054,7 @@ Root WebApplicationContext: initialization completed in 12746 ms
 
 [INFO ] 2017-06-23 00:10:59,262 method:com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol$1.disconnected(DubboProtocol.java:130)
  [DUBBO] disconected from /192.168.25.1:42329,url:dubbo://192.168.25.1:20880/com.taotao.service.ItemService?anyhost=true&application=taotao-manager&channel.readonly.sent=true&codec=dubbo&dubbo=2.5.3&heartbeat=60000&interface=com.taotao.service.ItemService&methods=getItemList,getItemDescById,addItem,getItemById,updateItem&pid=44184&side=provider&timeout=300000&timestamp=1498146802995, dubbo version: 2.5.3, current host: 127.0.0.1
+<<<<<<< Updated upstream
 
 
 [INFO ] 2017-06-23 09:20:18,035 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:307)
@@ -11469,3 +11470,5 @@ Root WebApplicationContext: initialization completed in 4857 ms
 
 [INFO ] 2017-06-23 17:46:47,410 method:com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol$1.disconnected(DubboProtocol.java:130)
  [DUBBO] disconected from /192.168.4.91:10717,url:dubbo://192.168.4.91:20880/com.taotao.service.ItemService?anyhost=true&application=taotao-manager&channel.readonly.sent=true&codec=dubbo&dubbo=2.5.3&heartbeat=60000&interface=com.taotao.service.ItemService&methods=getItemList,getItemDescById,addItem,getItemById,updateItem&pid=9360&side=provider&timeout=300000&timestamp=1498210758159, dubbo version: 2.5.3, current host: 127.0.0.1
+=======
+>>>>>>> Stashed changes

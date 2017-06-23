@@ -42,9 +42,11 @@ public class ItemController {
 	}
 
 	// 加载商品描述
+
 	@RequestMapping("/rest/item/query/item/desc/{id}")
 	@ResponseBody
-	public TbItemDesc getItemDescById(@RequestParam(value="id", defaultValue="0")Long itemId) {
+	public TbItemDesc getItemDescById(@RequestParam(value = "id", defaultValue = "0") Long itemId) {
+
 		TbItemDesc itemDesc = itemService.getItemDescById(itemId);
 		return itemDesc;
 	}
@@ -52,7 +54,8 @@ public class ItemController {
 
 	@RequestMapping("/rest/item/param/item/query/{id}")
 	@ResponseBody
-	public TbItem getItemById(@PathVariable(value="id") Long itemId) {
+	public TbItem getItemById(@PathVariable(value = "id") Long itemId) {
+
 		// 根据商品id查询商品信息
 		TbItem tbItem = itemService.getItemById(itemId);
 		return tbItem;
