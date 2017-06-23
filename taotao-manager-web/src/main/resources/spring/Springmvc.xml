@@ -9,7 +9,6 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 	<!-- 加载资源文件 -->
 	<context:property-placeholder location="classpath:resources/resource.properties" />
-
 	<!-- 配置注解驱动 -->
 	<mvc:annotation-driven />
 
@@ -43,4 +42,8 @@
 		id="itemService" timeout="300000" />
 	<dubbo:reference interface="com.taotao.service.ItemCatService"
 		id="itemCatService" timeout="300000" />
+	<dubbo:reference interface="com.taotao.content.service.ContentCategoryService"
+		id="contentCategoryService" timeout="300000" />
+	<dubbo:reference interface="com.taotao.content.service.ContentService"
+		id="contentService" timeout="300000" />
 </beans>

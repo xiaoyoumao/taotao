@@ -15,7 +15,7 @@ public class TestFastDFS {
 		// 1.添加jar包
 		// 2.创建一个配置文件，配置tracker服务器地址
 		// 3.加载配置文件
-		ClientGlobal.init("E:/git/taotao/taotao-manager-web/src/main/resources/resources/client.conf");
+		ClientGlobal.init("D:/taotao/taotao/taotao-manager-web/src/main/resources/resources/client.conf");
 		// 4.创建一个trackerClient对象
 		TrackerClient trackerClient = new TrackerClient();
 		// 5.使用TrackerClient对象获得trackerServer对象
@@ -25,18 +25,18 @@ public class TestFastDFS {
 		// 7.创建一个StrorageClient对象，trackerserver，StorageServer两个参数。
 		StorageClient storageClient = new StorageClient(trackerServer, storageServer);
 		// 8.使用StorageClient对象上传
-		String[] strings = storageClient.upload_file("K:/1.jpg", "jpg", null);
-		for (String string : strings) {
+		//String[] strings = storageClient.upload_file("K:/1.jpg", "jpg", null);
+		/*for (String string : strings) {
 			System.out.println(string);
-		}
+		}*/
 	}
 
 	@Test
 	public void upLoadFile1() throws Exception {
 		FastDFSClient client = new FastDFSClient(
-				"E:/git/taotao/taotao-manager-web/src/main/resources/resources/client.conf");
-		String uploadFile = client.uploadFile("K:/1.jpg");
-		System.out.println(uploadFile);
+				"D:/taotao/taotao/taotao-manager-web/src/main/resources/resources/client.conf");
+		//String uploadFile = client.uploadFile("K:/1.jpg");
+		
 	}
 
 }

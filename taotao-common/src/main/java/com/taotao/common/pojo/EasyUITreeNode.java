@@ -34,4 +34,9 @@ public class EasyUITreeNode implements Serializable {
 		this.state = state;
 	}
 
+	@Override
+	public String toString() {
+		return "EasyUITreeNode [id=" + id + ", text=" + text + ", state=" + state + "]";
+	}
+
 }
