@@ -18,14 +18,6 @@ public class ItemController {
 	@Autowired
 	private ItemService itemService;
 
-	@RequestMapping("/item/{itemId}")
-	@ResponseBody
-	public TbItem getItemById1(@PathVariable Long itemId) {
-		// 根据商品id查询商品信息
-		TbItem tbItem = itemService.getItemById(itemId);
-		return tbItem;
-	}
-
 	@RequestMapping("/item/list")
 	@ResponseBody
 	public EasyUIDataGridResult getItemList(int page, int rows) {
@@ -41,23 +33,62 @@ public class ItemController {
 
 	}
 
+	@RequestMapping("/rest/page/item-edit")
+	public String showItemedit() {
+
+		return "item-edit";
+
+	}
+
 	// 加载商品描述
 
 	@RequestMapping("/rest/item/query/item/desc/{id}")
 	@ResponseBody
-	public TbItemDesc getItemDescById(@RequestParam(value = "id", defaultValue = "0") Long itemId) {
+	public TaotaoResult getItemDescById(@PathVariable(value = "id") Long itemDescId) {
 
-		TbItemDesc itemDesc = itemService.getItemDescById(itemId);
-		return itemDesc;
+		TaotaoResult result = itemService.getItemDescById(itemDescId);
+		return result;
 	}
 	// 加载商品规格
 
 	@RequestMapping("/rest/item/param/item/query/{id}")
 	@ResponseBody
-	public TbItem getItemById(@PathVariable(value = "id") Long itemId) {
+	public TaotaoResult getItemById(@PathVariable(value = "id") Long itemId) {
 
 		// 根据商品id查询商品信息
-		TbItem tbItem = itemService.getItemById(itemId);
-		return tbItem;
+		TaotaoResult result = itemService.getItemById(itemId);
+		return result;
 	}
+
+	@RequestMapping("/rest/item/update")
+	@ResponseBody
+	public TaotaoResult updateItem(TbItem item, String desc) {
+		TaotaoResult result = itemService.updateItem(item, desc);
+		return result;
+	}
+
+	@RequestMapping("/rest/item/delete")
+	@ResponseBody
+	public TaotaoResult deleteItem(Long[] ids) {
+		TaotaoResult result = itemService.deleteItem(ids);
+		return result;
+	}
+
+	// 下架
+	@RequestMapping("/rest/item/instock")
+	@ResponseBody
+	public TaotaoResult updateInstock(Long[] ids) {
+		TaotaoResult result = itemService.updateInstock(ids);
+		return result;
+	}
+
+	// 上架
+	@RequestMapping("/rest/item/reshelf")
+	@ResponseBody
+	public TaotaoResult updateeshelf(Long[] ids) {
+		TaotaoResult result = itemService.updateeshelf(ids);
+		return result;
+	}
+	
+	
 }

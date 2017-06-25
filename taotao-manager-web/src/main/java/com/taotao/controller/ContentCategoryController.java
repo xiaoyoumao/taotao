@@ -47,4 +47,6 @@ public class ContentCategoryController {
 		TaotaoResult result = contentCategoryService.deleteByIdCategory(id);
 		return result;
 	}
+	
+	
 }

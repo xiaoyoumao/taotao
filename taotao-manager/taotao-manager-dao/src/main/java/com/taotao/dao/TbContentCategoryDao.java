@@ -20,7 +20,7 @@ public interface TbContentCategoryDao {
 
 	TbContentCategory selectByPrimaryKey(Long id);
 
-	TbContentCategory selectByPparentId(Long parentId);
+	List<TbContentCategory> selectByPparentId(Long parentId);
 
 	int updateByExampleSelective(@Param("record") TbContentCategory record,
 			@Param("example") TbContentCategoryQuery example);

@@ -92,22 +92,34 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 		return TaotaoResult.ok(tbContentCategory);
 	}
 
+
 	public TaotaoResult deleteByIdCategory(Long id) {
-		// 判断当前节点的isparent是否为true 1，直到为false为止。
+		// 当前节点
 		TbContentCategory node = contentCategoryDao.selectByPrimaryKey(id);
-		TbContentCategory parentNode = contentCategoryDao.selectByPparentId(node.getParentId());
-		if (node.getIsParent()) {
-			TbContentCategory childNode = contentCategoryDao.selectByPparentId(node.getId());
-			if (childNode.getIsParent()) {
-				deleteByIdCategory(childNode.getId());
-			} else {
-				contentCategoryDao.deleteByPrimaryKey(childNode.getId());
-			
-				
+		// 父节点
+		TbContentCategory parentNode = contentCategoryDao.selectByPrimaryKey(node.getParentId());
+
+		// 子节点集合
+		List<TbContentCategory> childNodeList = contentCategoryDao.selectByPparentId(node.getId());
+
+		// 判断当前节点的isparent是否为true 1，直到为false为止。
+		if (!node.getIsParent() && childNodeList.size() == 0) {
+			contentCategoryDao.deleteByPrimaryKey(node.getId());
+			// 判断父类是否还有其他子类 如果没有 把父节点变为叶子节点
+			List<TbContentCategory> list = contentCategoryDao.selectByPparentId(node.getParentId());
+			if (list.size() <= 0) {
+				parentNode.setIsParent(false);
+				contentCategoryDao.updateByPrimaryKey(parentNode);
 			}
+
+		} else {
+			for (TbContentCategory tbContentCategory : childNodeList) {
+				deleteByIdCategory(tbContentCategory.getId());// 递归删除每一个子节点
+				contentCategoryDao.deleteByPrimaryKey(tbContentCategory.getId());// 删除当前节点
+			}
+			contentCategoryDao.deleteByPrimaryKey(node.getId());
 		}
-		contentCategoryDao.deleteByPrimaryKey(id);
-		parentNode.setIsParent(false);
+
 		return TaotaoResult.ok();
 	}
 

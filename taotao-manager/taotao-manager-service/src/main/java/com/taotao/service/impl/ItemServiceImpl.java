@@ -27,9 +27,9 @@ public class ItemServiceImpl implements ItemService {
 	@Autowired
 	private TbItemDescDao itemDescDao;
 
-	public TbItem getItemById(Long iienId) {
-
-		return itemDao.selectByPrimaryKey(iienId);
+	public TaotaoResult getItemById(Long iienId) {
+		TbItem item = itemDao.selectByPrimaryKey(iienId);
+		return TaotaoResult.ok(item);
 	}
 
 	public EasyUIDataGridResult getItemList(int page, int rows) {
@@ -73,15 +73,58 @@ public class ItemServiceImpl implements ItemService {
 		return ok;
 	}
 
-	public TaotaoResult updateItem(TbItem item) {
-		TbItemQuery query = new TbItemQuery();
-		Criteria criteria = query.createCriteria();
-		criteria.andIdEqualTo(item.getId());
-		return null;
+	public TaotaoResult getItemDescById(Long itemId) {
+		TbItemDesc itemDesc = itemDescDao.selectByPrimaryKey(itemId);
+		return TaotaoResult.ok(itemDesc);
 	}
 
-	public TbItemDesc getItemDescById(Long itemId) {
-		// TODO Auto-generated method stub
-		return itemDescDao.selectByPrimaryKey(itemId);
+	public TaotaoResult updateItem(TbItem item, String desc) {
+
+		// 2.修改TbItem对象属性
+		Date date = new Date();
+		item.setUpdated(date);
+
+		// 3.向商品表中更新数据
+		itemDao.updateByPrimaryKey(item);
+		// 4.查出bItemDesc对象
+		TbItemDesc itemDesc = itemDescDao.selectByPrimaryKey(item.getId());
+		// 5.补全TbItemDesc的属性
+		itemDesc.setItemDesc(desc);
+		itemDesc.setUpdated(date);
+
+		// 6.向商品描述表中添加数据
+		itemDescDao.updateByPrimaryKey(itemDesc);
+		// 7.TaotaoResoult.ok
+		TaotaoResult ok = TaotaoResult.ok();
+		return ok;
 	}
+
+	public TaotaoResult deleteItem(Long[] ids) {
+		for (Long id : ids) {
+			TbItem item = itemDao.selectByPrimaryKey(id);
+			item.setStatus((byte) 3);
+			itemDao.updateByPrimaryKey(item);
+		}
+		return TaotaoResult.ok();
+	}
+
+	public TaotaoResult updateInstock(Long[] ids) {
+		for (Long id : ids) {
+			TbItem item = itemDao.selectByPrimaryKey(id);
+			item.setStatus((byte) 2);
+			itemDao.updateByPrimaryKey(item);
+		}
+		return TaotaoResult.ok();
+	}
+
+	public TaotaoResult updateeshelf(Long[] ids) {
+		for (Long id : ids) {
+			TbItem item = itemDao.selectByPrimaryKey(id);
+			item.setStatus((byte) 1);
+			itemDao.updateByPrimaryKey(item);
+		}
+		return TaotaoResult.ok();
+	}
+
+
 }
